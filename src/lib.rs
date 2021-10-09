@@ -12,10 +12,7 @@ where
     type Maximum = I::Item;
 
     fn argmax(mut self) -> Option<(usize, Self::Maximum)> {
-        let v0 = match self.next() {
-            Some(v) => v,
-            None => return None,
-        };
+        let v0 = self.next()?;
 
         Some(
             self.enumerate()
